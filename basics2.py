@@ -1,0 +1,21 @@
+import cv2
+import numpy as np
+
+dino = cv2.imread("dino2.png")
+lizard = cv2.imread("lizard.png")
+weightedimg = cv2.addWeighted(dino,0.5,lizard,0.5,0)
+cv2.imshow("weightedimg",weightedimg)
+cv2.waitKey(0)
+subtractimg = cv2.subtract(dino,lizard)
+cv2.imshow("subtractimg", subtractimg)
+cv2.waitKey(0)
+resized = cv2.resize(dino,(300,300))
+cv2.imshow("resizedimg",resized)
+cv2.imwrite("dino.png",resized)
+cv2.waitKey(0)
+print(dino.shape)
+kernel = np.ones((5,5),np.uint8)
+blur =cv2.erode(dino,kernel)
+cv2.imshow("erodedimg",blur)
+cv2.imwrite("blur.png",blur)
+cv2.waitKey(0)
