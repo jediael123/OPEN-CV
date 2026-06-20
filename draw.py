@@ -1,0 +1,21 @@
+import cv2
+dino = cv2.imread("dino.png")
+startpoint = (10,10)
+endpoint = (300,10)
+img = cv2.line(dino,startpoint,endpoint,(255,0,255),8,cv2.LINE_AA)
+cv2.imshow("line",img)
+cv2.waitKey(0)
+
+img=cv2.rectangle(dino,(10,10),(200,200),(255,255,0),4,cv2.LINE_8)
+cv2.imshow("rectangle",img)
+cv2.waitKey(0)
+
+img=cv2.rectangle(dino,(10,10),(200,200),(255,255,0),-4)
+cv2.imshow("rectangle",img)
+cv2.waitKey(0)
+img = cv2.circle(dino,(150,150),80,(255,0,150),9,cv2.LINE_4)
+cv2.imshow("circle",img)
+cv2.waitKey(0)
+img = cv2.circle(dino,(150,150),80,(255,0,150),-9)
+cv2.imshow("circle",img)
+cv2.waitKey(0)
